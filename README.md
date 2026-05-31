@@ -11,4 +11,12 @@ Using commands is highly recommended to improve your understanding and confidenc
 
 ### For Windows user only
 1. Open your VS Code editor. If it is not connected to the WSL environment, you can use several methods to establish the connection
-- In the vs codde, click on the terminal panel or press Ctrl + 'j', at the terminal execute this command: wsl
+- In VS Code, open the terminal panel by clicking on it or pressing Ctrl + , then run the following command: wsl
+- Second method: Press Ctrl + Shift + P, type “WSL: Connect to WSL”, and press Enter
+- Third method: Navigate to the bottom-left corner of the VS Code window, click “Open a Remote Window”, and select “Connect to WSL"
+- Alternative method (Windows Terminal users) - Open Windows Terminal, run:
+
+```bash
+wsl
+code .
+```
