@@ -51,19 +51,19 @@ Commmon reason:
 cd /home                # or
 cd /home/laoniu         # laoniu - is my user directory
 
-# 2. Create a new directory, E.g.: practice_react
+# 2. Create a new directory, E.g.: practice-react
 # Take notes that in Linux environment is case sensitive
 # In Windows GUI, normally we want to create a folder nest in root/ main folder
 # Commonly, we preform this process right click -> Create folder -> Input name ->
 # double click navigate to root/ main folder -> .......
 # In Linux command line interface (CLI), I just need to execute this commmand
-mkdir -p /home/laoniu/practice_react        # E.g.: my user directory name is laoniu. The new directory has created at /home/laoniu/
+mkdir -p /home/laoniu/practice-react        # E.g.: my user directory name is laoniu. The new directory has created at /home/laoniu/
 
 # verify my created directory
 ls /home/laoniu                             # show practice_react
 
 # if I want to navigate to the directory, instead of clicks ...... we execute this command
-cd /home/laoniu/practice_react
+cd /home/laoniu/practice-react
 ```
 
 3. Create a starter project with vite + React + JavaScript
@@ -107,7 +107,7 @@ Select 'Yes', and press ENTER
 ```
 Then the new app will start to create and when complete ....
 ```
-◇  Scaffolding project in /home/laoniu/practice_react/react-02-starter-project...
+◇  Scaffolding project in /home/laoniu/practice-react/react-02-starter-project...
 │
 ◇  Installing dependencies with npm...
 
@@ -135,13 +135,13 @@ Now let kill the run development server with press Ctrl + c to stop the running 
 Then we remove the created app and use this quick command, see this magic !!!
 ```bash
 # 1. Use the ls - a list command to verify the file exist existed
-ls  ~/practice_react/                               # Return: react-starter-project
+ls  ~/practice-react/                               # Return: react-02-starter-project
 
 # 1. Remove the created app
-rm -f -r ~/practice_react/react-02-starter-project/
+rm -f -r ~/practice-react/react-02-starter-project/
 
 # Then use the ls - a list command to verify the file has not existed
-ls  ~/practice_react/                               # Return: react-starter-project disappeared
+ls  ~/practice-react/                               # Return: react-02-starter-project disappeared
 ```
 
 Now we using a single line command to create our starter porject
@@ -157,7 +157,7 @@ Select 'Yes' and ENTER
 ```
 The project has created
 ```
-◇  Scaffolding project in /home/laoniu/practice_react/react-02-starter-project...
+◇  Scaffolding project in /home/laoniu/practice-react/react-02-starter-project...
 │
 ◇  Installing dependencies with npm...
 
