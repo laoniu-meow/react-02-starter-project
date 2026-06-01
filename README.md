@@ -11,9 +11,11 @@ This topic focuses on creating a blank starter project using Vite + React + Java
 
 [x] [Clean up default Boilerplate](clean-up-default-boilerplate)
 
+[x] [Practice commit the code](practice-commit-the-code)
+
 ## Create a new Starter Project
 Create a new blank starter project. As introduced in react-01-get-start, this exercise encourages you to repeat the setup steps to build confidence. Some guided steps are included to reduce common errors, along with troubleshooting notes to support your learning. Over time, this will help strengthen your problem-solving skills.
-Using commands is highly recommended to improve your understanding and confidence with the Command Line Interface (CLI)
+Using commands is highly recommended to improve your understanding and confidence with the Command Line Interface (CLI) and Git Operation command
 
 ### For Windows user only
 1. Open your VS Code editor. If it is not connected to the WSL environment, you can use several methods to establish the connection
@@ -302,7 +304,39 @@ Before changed to CssBaseline:
 ![Alt Text](public/doc_media/output_global_css.png)
 
 5. Now you are safe to remove App.css
-``bash
+```bash
 rm src/App.css
 ```
+---
 
+## Practice commit the code
+Take this challenge to commit your code to GitHub
+
+```bash
+# 1. Go to GitHub, create a new repo
+
+# 2. Link the server url
+git remote add origin <github-ssh-url>
+
+# 3. Check your server url, should be same as return git@........ (fetch)
+git remote -v
+
+# 4. Check status
+git status
+
+# 5. Stage your changes and check the status
+git add .
+git status
+
+# 6. Commit changes
+git commit -m 'Add your commit message'
+
+# 7. Add git branch - main
+git branch -M main
+
+# 8. Check branch
+git branch
+
+# 9. Push code to remote repository with --set-upstream for the first commit
+git push --set-upstream origin main
+```
