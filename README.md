@@ -7,6 +7,10 @@ This topic focuses on creating a blank starter project using Vite + React + Java
 
 [x] [Project Structure](project-structure)
 
+[x] [Styling your project](styling-your-project)
+
+[x] [Clean up default Boilerplate](clean-up-default-boilerplate)
+
 ## Create a new Starter Project
 Create a new blank starter project. As introduced in react-01-get-start, this exercise encourages you to repeat the setup steps to build confidence. Some guided steps are included to reduce common errors, along with troubleshooting notes to support your learning. Over time, this will help strengthen your problem-solving skills.
 Using commands is highly recommended to improve your understanding and confidence with the Command Line Interface (CLI)
@@ -63,7 +67,7 @@ cd /home/laoniu/practice_react
 3. Create a starter project with vite + React + JavaScript
 ```bash
 # Let's show you with step-by-step method first
-npx create-vite@latest <app-name>          # E.g.: replace the app-name to react-starter-project
+npx create-vite@latest <app-name>          # E.g.: replace the app-name to react-02-starter-project
 ```
 Select 'React', and press ENTER
 ```
@@ -101,7 +105,7 @@ Select 'Yes', and press ENTER
 ```
 Then the new app will start to create and when complete ....
 ```
-◇  Scaffolding project in /home/laoniu/practice_react/react-starter-project...
+◇  Scaffolding project in /home/laoniu/practice_react/react-02-starter-project...
 │
 ◇  Installing dependencies with npm...
 
@@ -132,7 +136,7 @@ Then we remove the created app and use this quick command, see this magic !!!
 ls  ~/practice_react/                               # Return: react-starter-project
 
 # 1. Remove the created app
-rm -f -r ~/practice_react/react-starter-project/
+rm -f -r ~/practice_react/react-02-starter-project/
 
 # Then use the ls - a list command to verify the file has not existed
 ls  ~/practice_react/                               # Return: react-starter-project disappeared
@@ -141,7 +145,7 @@ ls  ~/practice_react/                               # Return: react-starter-proj
 Now we using a single line command to create our starter porject
 ```bash
 # Execute this command
-npx create-vite@latest <app-name> --template react          # E.g.: replace the app-name to react-starter-project
+npx create-vite@latest <app-name> --template react          # E.g.: replace the app-name to react-02-starter-project
 ```
 Select 'Yes' and ENTER
 ```
@@ -151,7 +155,7 @@ Select 'Yes' and ENTER
 ```
 The project has created
 ```
-◇  Scaffolding project in /home/laoniu/practice_react/react-starter-project...
+◇  Scaffolding project in /home/laoniu/practice_react/react-02-starter-project...
 │
 ◇  Installing dependencies with npm...
 
@@ -183,9 +187,9 @@ let’s walk through the project structure for each folder to gain a better unde
 ```
 <Project name>/
 ├── node_modules/               # Contains all installed dependencies (Do not commit to GitHub)
-├── public/                     # Stored assets are copied directly to the final build completely untouched
+├── public/                     # Stored assets (images, video and etc...) are copied directly to the final build completely untouched
 ├── src/                        # The main application source code
-│   ├── assets/                 # Stored assets are actively compiled and minified by Vite
+│   ├── assets/                 # Stored assets (images, video and etc...) are actively compiled and minified by Vite
 │   ├── App.css                 # Used to manage the global styles applied to app.jsx
 │   ├── App.jsx                 # Main top-level React component. Usually contains: routing, layouts, global providers, app structure
 │   ├── index.css               # Used to manage global reset styling
@@ -198,3 +202,107 @@ let’s walk through the project structure for each folder to gain a better unde
 ├── README.md                   # Project's documentation file, written in Markdown, that explains what the application does, how to install it, and how to run it
 └── vite.config.ts              # Is the main configuration file where you customize how Vite builds, bundles, and serves your project
 ```
+---
+
+## Styling your project
+Learning how to style a project is a fundamental skill that every front-end developer must possess. Even though most modern companies have a dedicated UI/UX team to handle design layouts, developers are still responsible for turning those designs into clean, functional code
+
+Anyone familiar with HTML knows that CSS (Cascading Style Sheets) is the core language used to style web interfaces. However, modern web development relies heavily on advanced styling frameworks and component libraries—such as Bootstrap, Tailwind CSS, and Material UI (MUI)—to build beautiful, responsive user interfaces efficiently
+
+MUI is a widely used and powerful UI component library. In this learning path, we will use it as our core framework, but you are free to explore other libraries if you prefer [... Read more about MUI](https://mui.com/material-ui/getting-started/)
+
+```bash
+#  Install the core MUI packages
+npm install @mui/material @emotion/react @emotion/styled
+```
+---
+
+## Clean up default Boilerplate
+In this section, you will create a blank project and clean up the default boilerplate
+
+1. public - Delete the all the default assests in this directory
+```bash
+# Assume that you already at this ~/react-practice/react-02-starter-project
+# If not, navigate to project directory. Example: cd ~/react-practice/react-02-create-starter-project
+cd ~/<project root directory>/<project directory>       # <- Replace with correct directories
+
+# Remove the assets in the public directory
+rm public/*.*
+```
+
+2. src/assets - Delete the all the default assests in this directory
+```bash
+rm src/assets/*.*
+```
+
+3. Refactor App.jsx
+Refactor App.jsx, import Material UI (MUI), and start using its UI components
+
+```
+
+# Remove all the code in the App.jsx
+# Implement a clean startup code
+
+import { Container, Typography } from '@mui/material'; // Import Container and Typography components from Material UI
+
+function App() {
+  return (
+    <div>
+      <Container maxWidth="xl">
+        <Typography variant="h1" align="center">
+          Welcome to My App
+        </Typography>
+        <Typography variant="h3" align="center">
+          This is a simple application using Material UI for styling.
+        </Typography>
+      </Container>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+4. Remove the Global CSS line: import './index.css', and replace with the MUI CssBaseline
+Origin
+```
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'      // Remove this line this is a global css
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+```
+
+Replaced:
+```
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import CssBaseline from '@mui/material/CssBaseline'     // Replace with CssBaseline
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+```
+
+Before change the global ccs:
+
+![Alt Text](public/doc_media/output_global_css.png)
+
+Before changed to CssBaseline:
+
+![Alt Text](public/doc_media/output_global_css.png)
+
+5. Now you are safe to remove App.css
+``bash
+rm src/App.css
+```
+
